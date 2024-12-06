@@ -1,0 +1,6 @@
+@MyApiNight.WebApi_HostAddress = http://localhost:5076
+
+GET {{MyApiNight.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
