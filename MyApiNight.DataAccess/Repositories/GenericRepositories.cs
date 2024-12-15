@@ -20,6 +20,8 @@ namespace MyApiNight.DataAccess.Repositories
         public void Delete(int id)
         {
             var value = _context.Set<T>().Find(id);
+            _context.Set<T>().Remove(value);
+            _context.SaveChanges();
         }
 
         public List<T> GetAll()

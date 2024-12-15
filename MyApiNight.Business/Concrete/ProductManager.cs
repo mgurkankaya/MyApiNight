@@ -26,6 +26,11 @@ namespace MyApiNight.Business.Concrete
             return _productDal.GetById(id);
         }
 
+        public int TGetProductCount()
+        {
+            return _productDal.GetProductCount();
+        }
+
         public void TInsert(Product entity)
         {
             _productDal.Insert(entity);

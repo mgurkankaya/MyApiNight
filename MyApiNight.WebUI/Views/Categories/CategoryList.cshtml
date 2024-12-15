@@ -1,0 +1,42 @@
+﻿@model List<MyApiNight.WebUI.Dtos.ResultCategoryDto>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateCategory</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container mt-3">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Kategori Adı</td>
+                    <td>İşlemler</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CategoryId</td>
+                        <td>@item.CategoryName</td>
+                        <td>
+                            <a class="btn btn-danger" href="/Categories/DeleteCategory/@item.CategoryId"><i class="fa fa-trash"></i></a>
+                            <a class="btn btn-success" href="/Categories/UpdateCategory/@item.CategoryId"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a class="btn btn-success" href="/Categories/CreateCategory/"><i class="fa fa-plus px-2"></i>Ekle </a>
+    </div>
+</body>
+</html>

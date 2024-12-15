@@ -1,0 +1,23 @@
+﻿@model MyApiNight.WebUI.Dtos.CreateCategoryDto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateCategory</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-3">
+        <form method="post">
+            <input type="text" asp-for="CategoryName" class="form-control" placeholder="Kategori Adı" />
+            <button type="submit" class="btn btn-outline-success mt-2">Ekle</button>
+            <a class="btn btn-outline-danger mt-2" href="/Categories/CategoryList/">İptal</a>
+        </form>
+    </div>
+</body>
+</html>

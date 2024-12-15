@@ -1,0 +1,44 @@
+﻿@model List<MyApiNight.WebUI.Dtos.ResultProductDto>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateCategory</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-3">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ürün Adı</th>
+                    <th>Ürün Stok</th>
+                    <th>Ürün Fiyat</th>
+                    <td>İşlemler</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ProductId</td>
+                        <td>@item.ProductName</td>
+                        <td>@item.ProductStock</td>
+                        <td>@item.ProductPrice</td>
+                        <td>
+                            <a class="btn btn-danger" href="/Products/DeleteProduct/@item.ProductId"><i class="fa fa-trash"></i></a>
+                            <a class="btn btn-success" href="/Products/UpdateProduct/@item.ProductId"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a class="btn btn-success" href="/Products/CreateProduct/"><i class="fa fa-plus px-2"></i>Ekle </a>
+    </div>
+</body>
+</html>
